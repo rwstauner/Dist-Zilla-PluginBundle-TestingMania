@@ -6,7 +6,7 @@ use 5.010001; # We use the smart match operator
 # VERSION
 
 use Dist::Zilla::Plugin::Test::CPAN::Changes            qw();
-use Dist::Zilla::Plugin::CompileTests                   qw();
+use Dist::Zilla::Plugin::Test::Compile 1.112400         qw();
 use Dist::Zilla::Plugin::CriticTests 1.102280           qw();
 use Dist::Zilla::Plugin::DistManifestTests              qw();
 use Dist::Zilla::Plugin::EOLTests 0.02                  qw(); # Also checks for trailing whitespace
@@ -50,7 +50,7 @@ Simply add the following near the end of F<dist.ini>:
 
 =item *
 
-L<Dist::Zilla::Plugin::CompileTests>, which performs tests to syntax check your
+L<Dist::Zilla::Plugin::Test::Compile>, which performs tests to syntax check your
 dist.
 
 =item *
@@ -190,7 +190,7 @@ sub configure {
         'Test::CPAN::Meta::JSON'=> 1, # prunes itself if META.json isn't there
         'Test::Pod::LinkCheck'  => 1,
         'Test::Version'         => 1,
-        CompileTests            => 1,
+        'Test::Compile'         => 1,
         CriticTests             => $self->config_slice('critic_config'),
         DistManifestTests       => 1,
         EOLTests                => 1,
