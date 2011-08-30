@@ -7,7 +7,7 @@ use 5.010001; # We use the smart match operator
 
 use Dist::Zilla::Plugin::Test::CPAN::Changes            qw();
 use Dist::Zilla::Plugin::Test::Compile 1.112400         qw();
-use Dist::Zilla::Plugin::CriticTests 1.102280           qw();
+use Dist::Zilla::Plugin::Test::Perl::Critic 2.112410    qw();
 use Dist::Zilla::Plugin::DistManifestTests              qw();
 use Dist::Zilla::Plugin::EOLTests 0.02                  qw(); # Also checks for trailing whitespace
 use Dist::Zilla::Plugin::KwaliteeTests                  qw();
@@ -191,7 +191,7 @@ sub configure {
         'Test::Pod::LinkCheck'  => 1,
         'Test::Version'         => 1,
         'Test::Compile'         => 1,
-        CriticTests             => $self->config_slice('critic_config'),
+        'Test::Perl::Critic'    => $self->config_slice('critic_config'),
         DistManifestTests       => 1,
         EOLTests                => 1,
         KwaliteeTests           => 1,
