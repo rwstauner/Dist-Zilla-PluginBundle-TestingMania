@@ -55,7 +55,7 @@ dist.
 
 =item *
 
-L<Dist::Zilla::Plugin::CriticTests>, which checks your code against best
+L<Dist::Zilla::Plugin::Test::Perl::Critic>, which checks your code against best
 practices. See L<Perl::Critic> for details. You can set a perlcritic config
 file:
 
